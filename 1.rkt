@@ -13,10 +13,12 @@
 
 (define (improve y x) (/ (+ y (/ x y)) 2))
 
+;основной рекурсивный цикл вычисления, начиная с приближения y;
 (define (sqrt-loop y x) (if (close-enough? (square y) x) y (sqrt-loop (improve y x) x)))
 
 (define (sqrt x) (sqrt-loop 1.0 x))
 
+;пример;
 (displayln (sqrt 5))
 
 
